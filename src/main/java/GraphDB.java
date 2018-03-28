@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -39,6 +40,7 @@ public class GraphDB {
 
     public GraphDB(String dbPath) {
         try {
+
             File inputFile = new File(dbPath);
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
