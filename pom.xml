@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>war</packaging>
     <groupId>cs61b.proj3</groupId>
     <artifactId>proj3</artifactId>
     <version>1.0</version>
@@ -20,9 +19,45 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.google.appengine</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>1.9.63</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <!-- This tells Maven to include all dependencies -->
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>MapServer</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>0.4.4</version>
+                <configuration>
+                    <jdkVersion>1.8</jdkVersion>
+                    <!-- Use your own application name -->
+                    <appName>BearMap</appName>
+                    <processTypes>
+                        <!-- Tell Heroku how to launch your application -->
+                        <web>java -jar ./target/proj3-1.0-jar-with-dependencies.jar</web>
+                    </processTypes>
+                    <includeTarget>false</includeTarget>
+                    <includes>
+                        <include>target/proj3-1.0-jar-with-dependencies.jar</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
