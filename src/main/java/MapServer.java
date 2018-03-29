@@ -84,6 +84,7 @@ public class MapServer {
      * Do not place it in the main function. Do not place initialization code anywhere else.
      * This is for testing purposes, and you may fail tests otherwise.
      **/
+
     public static void initialize() {
         graph = new GraphDB(OSM_DB_PATH);
         rasterer = new Rasterer(IMG_ROOT);
@@ -94,7 +95,7 @@ public class MapServer {
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
-        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        return 5678; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 
     public static void main(String[] args) {
