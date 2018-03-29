@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="AGGraphBuildingTest" time="1.794" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="AGGraphBuildingTest" time="1.417" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,9 +62,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="AGGraphBuildingTest" name="testAdjacent" time="0.47"/>
-  <testcase classname="AGGraphBuildingTest" name="testLonAndLat" time="0.308"/>
-  <testcase classname="AGGraphBuildingTest" name="testClosest" time="0.386"/>
-  <testcase classname="AGGraphBuildingTest" name="testDistance" time="0.297"/>
-  <testcase classname="AGGraphBuildingTest" name="testNodeCount" time="0.333"/>
+  <testcase classname="AGGraphBuildingTest" name="testAdjacent" time="0.25"/>
+  <testcase classname="AGGraphBuildingTest" name="testLonAndLat" time="0.422"/>
+  <testcase classname="AGGraphBuildingTest" name="testClosest" time="0.266"/>
+  <testcase classname="AGGraphBuildingTest" name="testDistance" time="0.247"/>
+  <testcase classname="AGGraphBuildingTest" name="testNodeCount" time="0.232"/>
 </testsuite>
